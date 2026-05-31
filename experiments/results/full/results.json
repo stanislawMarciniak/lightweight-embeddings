@@ -1,0 +1,350 @@
+[
+  {
+    "model": "dan_standard",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.4896986484527588,
+        "spearman": 0.4705751699457767,
+        "mse": 0.1923239529132843,
+        "cosine_error": 0.14514437317848206
+      },
+      "avg_batch_time": 0.42705550040409435,
+      "avg_sample_time": 13.345484387627948,
+      "throughput": 0.07493171255192947,
+      "model_size_mb": 9.307621002197266,
+      "n_params": 2439937
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.4880465865135193,
+        "spearman": 0.46851093238871006,
+        "mse": 0.18909183144569397,
+        "cosine_error": 0.1450190395116806
+      },
+      "avg_batch_time": 338.78790859998844,
+      "avg_sample_time": 10587.122143749639,
+      "throughput": 9.445437451483206e-05,
+      "model_size_mb": 5.7220458984375e-05,
+      "n_params": 0
+    }
+  },
+  {
+    "model": "dan_optimized",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.46612563729286194,
+        "spearman": 0.4361847516127255,
+        "mse": 0.16078607738018036,
+        "cosine_error": 0.13022029399871826
+      },
+      "avg_batch_time": 0.4249436995451106,
+      "avg_sample_time": 13.279490610784705,
+      "throughput": 0.07530409330519557,
+      "model_size_mb": 0.23828506469726562,
+      "n_params": 62465
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.4645891487598419,
+        "spearman": 0.43261431441188514,
+        "mse": 0.16019152104854584,
+        "cosine_error": 0.13096341490745544
+      },
+      "avg_batch_time": 348.79904100052954,
+      "avg_sample_time": 10899.970031266548,
+      "throughput": 9.174337150758226e-05,
+      "model_size_mb": 4.57763671875e-05,
+      "n_params": 0
+    }
+  },
+  {
+    "model": "cnn_standard",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.4508792459964752,
+        "spearman": 0.41207214427073013,
+        "mse": 0.07558588683605194,
+        "cosine_error": 0.12366001307964325
+      },
+      "avg_batch_time": 0.7037907991616521,
+      "avg_sample_time": 21.993462473801628,
+      "throughput": 0.04546805675510116,
+      "model_size_mb": 3.8857460021972656,
+      "n_params": 1018625
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.4514577388763428,
+        "spearman": 0.41233093496280254,
+        "mse": 0.07556773722171783,
+        "cosine_error": 0.12366119772195816
+      },
+      "avg_batch_time": 58.02410600044823,
+      "avg_sample_time": 1813.2533125140071,
+      "throughput": 0.0005514949252256089,
+      "model_size_mb": 0.8818588256835938,
+      "n_params": 231168
+    }
+  },
+  {
+    "model": "cnn_optimized",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.28758570551872253,
+        "spearman": 0.26769930743858195,
+        "mse": 0.14448699355125427,
+        "cosine_error": 0.12548834085464478
+      },
+      "avg_batch_time": 0.5586957991909003,
+      "avg_sample_time": 17.459243724715634,
+      "throughput": 0.05727624951958149,
+      "model_size_mb": 0.24853897094726562,
+      "n_params": 65153
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.28831422328948975,
+        "spearman": 0.2681638138952,
+        "mse": 0.14494803547859192,
+        "cosine_error": 0.12548229098320007
+      },
+      "avg_batch_time": 54.79846799862571,
+      "avg_sample_time": 1712.4521249570535,
+      "throughput": 0.0005839579311013316,
+      "model_size_mb": 0.12258148193359375,
+      "n_params": 32128
+    }
+  },
+  {
+    "model": "bigru_standard",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.36589884757995605,
+        "spearman": 0.34022487660327416,
+        "mse": 0.10176544636487961,
+        "cosine_error": 0.1430239975452423
+      },
+      "avg_batch_time": 3.4122834011213854,
+      "avg_sample_time": 106.6338562850433,
+      "throughput": 0.009377884612246385,
+      "model_size_mb": 4.101566314697266,
+      "n_params": 1075201
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.36729589104652405,
+        "spearman": 0.34129508379497797,
+        "mse": 0.10179619491100311,
+        "cosine_error": 0.1429714411497116
+      },
+      "avg_batch_time": 5561.4143931998115,
+      "avg_sample_time": 173794.19978749412,
+      "throughput": 5.753931956433209e-06,
+      "model_size_mb": 2.288818359375e-05,
+      "n_params": 0
+    }
+  },
+  {
+    "model": "bigru_optimized",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.3735318183898926,
+        "spearman": 0.345278955672131,
+        "mse": 0.11023202538490295,
+        "cosine_error": 0.140233114361763
+      },
+      "avg_batch_time": 0.948525500643882,
+      "avg_sample_time": 29.64142189512131,
+      "throughput": 0.03373657321630007,
+      "model_size_mb": 1.1757850646972656,
+      "n_params": 308225
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.3746665418148041,
+        "spearman": 0.34584607004260587,
+        "mse": 0.11056436598300934,
+        "cosine_error": 0.13992995023727417
+      },
+      "avg_batch_time": 5449.297297100566,
+      "avg_sample_time": 170290.54053439267,
+      "throughput": 5.87231678789601e-06,
+      "model_size_mb": 2.288818359375e-05,
+      "n_params": 0
+    }
+  },
+  {
+    "model": "sru_standard",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.3790157437324524,
+        "spearman": 0.3463917704507036,
+        "mse": 0.11024606972932816,
+        "cosine_error": 0.1295168101787567
+      },
+      "avg_batch_time": 19.210714499786263,
+      "avg_sample_time": 600.3348281183207,
+      "throughput": 0.0016657371072979106,
+      "model_size_mb": 1.5478553771972656,
+      "n_params": 405761
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.3797221779823303,
+        "spearman": 0.34689730189631535,
+        "mse": 0.11048321425914764,
+        "cosine_error": 0.12924066185951233
+      },
+      "avg_batch_time": 2655.3455246998055,
+      "avg_sample_time": 82979.54764686892,
+      "throughput": 1.2051162344914678e-05,
+      "model_size_mb": 3.4332275390625e-05,
+      "n_params": 0
+    }
+  },
+  {
+    "model": "sru_optimized",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.4326333999633789,
+        "spearman": 0.4042944813682201,
+        "mse": 0.15838195383548737,
+        "cosine_error": 0.12493839114904404
+      },
+      "avg_batch_time": 23.27956810077012,
+      "avg_sample_time": 727.4865031490663,
+      "throughput": 0.00137459594875136,
+      "model_size_mb": 0.4614295959472656,
+      "n_params": 120961
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.43288829922676086,
+        "spearman": 0.4044494786026495,
+        "mse": 0.158179372549057,
+        "cosine_error": 0.12481117248535156
+      },
+      "avg_batch_time": 3244.356980199882,
+      "avg_sample_time": 101386.1556312463,
+      "throughput": 9.863279594475609e-06,
+      "model_size_mb": 3.4332275390625e-05,
+      "n_params": 0
+    }
+  },
+  {
+    "model": "custom_hybrid",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.5311437845230103,
+        "spearman": 0.5037582543770315,
+        "mse": 0.0791713148355484,
+        "cosine_error": 0.1266505867242813
+      },
+      "avg_batch_time": 1.4321498005301692,
+      "avg_sample_time": 44.754681266567786,
+      "throughput": 0.022344031321411967,
+      "model_size_mb": 0.3133430480957031,
+      "n_params": 82141
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.5293548107147217,
+        "spearman": 0.5020935380528782,
+        "mse": 0.0791468545794487,
+        "cosine_error": 0.1267419457435608
+      },
+      "avg_batch_time": 332.00798610014317,
+      "avg_sample_time": 10375.249565629474,
+      "throughput": 9.638322371663638e-05,
+      "model_size_mb": 0.000579833984375,
+      "n_params": 131
+    }
+  },
+  {
+    "model": "glove_mean",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.2653760313987732,
+        "spearman": 0.29356808389980543,
+        "mse": 0.28808557987213135,
+        "cosine_error": 0.25860875844955444
+      },
+      "avg_batch_time": 1.1844444008602295,
+      "avg_sample_time": 37.01388752688217,
+      "throughput": 0.027016886547616147,
+      "model_size_mb": 152.587890625,
+      "n_params": 40000000
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.2653760313987732,
+        "spearman": 0.29356808389980543,
+        "mse": 0.28808557987213135,
+        "cosine_error": 0.25860875844955444
+      },
+      "avg_batch_time": 1.1844444008602295,
+      "avg_sample_time": 37.01388752688217,
+      "throughput": 0.027016886547616147,
+      "model_size_mb": 152.587890625,
+      "n_params": 40000000
+    }
+  },
+  {
+    "model": "sentence_transformer",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.8274062871932983,
+        "spearman": 0.8203246731235654,
+        "mse": 0.12428534775972366,
+        "cosine_error": 0.03681892529129982
+      },
+      "avg_batch_time": 22.77180659912119,
+      "avg_sample_time": 711.6189562225372,
+      "throughput": 0.0014052464331589284,
+      "model_size_mb": 86.64404296875,
+      "n_params": 22713216
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.8274062871932983,
+        "spearman": 0.8203246731235654,
+        "mse": 0.12428534775972366,
+        "cosine_error": 0.03681892529129982
+      },
+      "avg_batch_time": 22.77180659912119,
+      "avg_sample_time": 711.6189562225372,
+      "throughput": 0.0014052464331589284,
+      "model_size_mb": 86.64404296875,
+      "n_params": 22713216
+    }
+  },
+  {
+    "model": "bge_small",
+    "fp32": {
+      "metrics": {
+        "pearson": 0.8552068471908569,
+        "spearman": 0.8674343453533564,
+        "mse": 0.1355910301208496,
+        "cosine_error": 0.040474407374858856
+      },
+      "avg_batch_time": 40.19995429989649,
+      "avg_sample_time": 1256.2485718717653,
+      "throughput": 0.0007960208054286867,
+      "model_size_mb": 127.25830078125,
+      "n_params": 33360000
+    },
+    "int8": {
+      "metrics": {
+        "pearson": 0.8552068471908569,
+        "spearman": 0.8674343453533564,
+        "mse": 0.1355910301208496,
+        "cosine_error": 0.040474407374858856
+      },
+      "avg_batch_time": 40.19995429989649,
+      "avg_sample_time": 1256.2485718717653,
+      "throughput": 0.0007960208054286867,
+      "model_size_mb": 127.25830078125,
+      "n_params": 33360000
+    }
+  }
+]
