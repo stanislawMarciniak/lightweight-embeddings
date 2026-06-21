@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 
 
-EMBED_DIM = 100
+EMBED_DIM = 768
 
 
 class BiGRUEncoder(nn.Module):
@@ -16,7 +16,6 @@ class BiGRUEncoder(nn.Module):
 
     def __init__(
         self,
-        vocab_size: int,
         embed_dim: int = EMBED_DIM,
         hidden_size: int = 256,
         bidirectional: bool = True,
@@ -66,13 +65,11 @@ class BiGRUEncoderOptimized(BiGRUEncoder):
 
     def __init__(
         self,
-        vocab_size: int,
         embed_dim: int = EMBED_DIM,
         hidden_size: int = 128,
         bidirectional: bool = True,
     ) -> None:
         super().__init__(
-            vocab_size=vocab_size,
             embed_dim=embed_dim,
             hidden_size=hidden_size,
             bidirectional=bidirectional,

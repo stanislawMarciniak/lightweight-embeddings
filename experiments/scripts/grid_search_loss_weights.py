@@ -16,7 +16,8 @@ from torch.utils.data import DataLoader
 from config import ExperimentConfig, TrainingConfig
 from evaluation.benchmark import evaluate_model
 from models.custom import CustomHybridModel
-from preprocessing.dataset_precomputed import PrecomputedSTSDataset
+from models.embeddings import get_token_embedding
+from preprocessing.dataset import sts_collate_fn
 from training.losses import HybridLoss
 from training.trainer import Trainer, create_dataloader
 from utils.seed import set_global_seed
@@ -100,9 +101,9 @@ def run_one(
     w_pearson: float,
     w_spearman: float,
     w_contrastive: float,
-    train_data: PrecomputedSTSDataset,
-    val_data: PrecomputedSTSDataset,
-    test_data: PrecomputedSTSDataset,
+    train_data,
+    val_data,
+    test_data,
     base_config: ExperimentConfig,
     exp_subdir: str,
     probe_epochs: int,
@@ -114,26 +115,28 @@ def run_one(
     training_cfg_dict["num_epochs"] = probe_epochs
     training = TrainingConfig(**training_cfg_dict)
 
-    model = CustomHybridModel(vocab_size=0)
+    model = CustomHybridModel()
 
     train_loader = create_dataloader(
         train_data,
         batch_size=training.batch_size,
         num_workers=training.num_workers,
         shuffle=True,
+        collate_fn=sts_collate_fn,
     )
     val_loader = create_dataloader(
         val_data,
         batch_size=training.batch_size,
         num_workers=training.num_workers,
         shuffle=False,
+        collate_fn=sts_collate_fn,
     )
     test_loader = DataLoader(
         test_data,
         batch_size=training.batch_size,
         shuffle=False,
         num_workers=training.num_workers,
-        collate_fn=None,
+        collate_fn=sts_collate_fn,
     )
 
     exp_dir = os.path.join(base_config.results_dir, "grid_search_loss_weights", exp_subdir)
@@ -145,6 +148,7 @@ def run_one(
         w_pearson=w_pearson,
         w_spearman=w_spearman,
         w_contrastive=w_contrastive,
+        w_cosent=0.0,
         tau_spearman=training.tau_spearman,
         margin=training.margin,
     )
@@ -153,7 +157,8 @@ def run_one(
     best_val_pearson = max(history["val_pearson"]) if history["val_pearson"] else float("-inf")
 
     device = torch.device(training.device if torch.cuda.is_available() else "cpu")
-    metrics, _ = evaluate_model(model, test_loader, device=device)
+    embedder = get_token_embedding().to(device)
+    metrics, _ = evaluate_model(model, test_loader, device=device, embedder=embedder)
 
     return {
         "w_pearson": w_pearson,
@@ -190,10 +195,9 @@ def main() -> None:
     base_config = ExperimentConfig()
     base_config.results_dir = os.path.join(PROJECT_ROOT, "results")
 
-    data_dir = os.path.join(PROJECT_ROOT, "data", "precomputed_embeddings")
-    train_data = PrecomputedSTSDataset(os.path.join(data_dir, "train_token_embeddings.pt"))
-    val_data   = PrecomputedSTSDataset(os.path.join(data_dir, "validation_token_embeddings.pt"))
-    test_data  = PrecomputedSTSDataset(os.path.join(data_dir, "test_token_embeddings.pt"))
+    from registry import load_datasets
+
+    train_data, val_data, test_data = load_datasets()
 
     out_dir = os.path.join(base_config.results_dir, "grid_search_loss_weights")
     visited: Set[Tuple[float, float, float]] = set()

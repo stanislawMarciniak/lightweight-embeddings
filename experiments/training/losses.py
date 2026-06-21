@@ -66,21 +66,52 @@ def contrastive_loss(
     return (pos_loss + neg_loss).mean()
 
 
+def cosent_loss(
+    z1: torch.Tensor,
+    z2: torch.Tensor,
+    labels: torch.Tensor,
+    tau: float = 0.05,
+) -> torch.Tensor:
+    """
+    CoSENT loss (https://kexue.fm/archives/8847).
+
+    Optimizes the *ordering* of cosine similarities to match the label order:
+    for every pair (i, j) with label_i > label_j it enforces cos_i > cos_j via a
+    smooth logsumexp ranking objective. This is the state-of-the-art training
+    objective for STS regression — it directly targets Spearman/Pearson and adds
+    zero inference cost (operates on already-computed embeddings).
+    """
+    cos = F.cosine_similarity(z1, z2) / tau  # (B,)
+    # diff[i, j] = cos_j - cos_i  (we want this < 0 when label_i > label_j)
+    diff = cos.unsqueeze(0) - cos.unsqueeze(1)
+    label_diff = labels.unsqueeze(1) - labels.unsqueeze(0)  # [i, j] = y_i - y_j
+    valid = (label_diff > 0).float()  # only pairs where y_i > y_j contribute
+    diff = diff - (1.0 - valid) * 1e12
+    diff = diff.view(-1)
+    zero = torch.zeros(1, device=diff.device, dtype=diff.dtype)
+    return torch.logsumexp(torch.cat([zero, diff], dim=0), dim=0)
+
+
 class HybridLoss(nn.Module):
     def __init__(
         self,
         w_pearson: float = 0.2,
         w_spearman: float = 0.2,
-        w_contrastive: float = 0.6,
+        w_contrastive: float = 0.3,
+        w_cosent: float = 0.3,
         tau_spearman: float = 1,
+        cosent_tau: float = 0.05,
         margin: float = 0.5,
     ) -> None:
         super().__init__()
-        total = w_pearson + w_spearman + w_contrastive
+        total = w_pearson + w_spearman + w_contrastive + w_cosent
+        total = total if total > 0 else 1.0
         self.w_pearson = w_pearson / total
         self.w_spearman = w_spearman / total
         self.w_contrastive = w_contrastive / total
+        self.w_cosent = w_cosent / total
         self.tau_spearman = tau_spearman
+        self.cosent_tau = cosent_tau
         self.margin = margin
 
     def forward(
@@ -90,13 +121,24 @@ class HybridLoss(nn.Module):
         z1: torch.Tensor,
         z2: torch.Tensor,
     ) -> Tuple[torch.Tensor, dict]:
-        lp = pearson_loss(score, target)
-        ls = soft_spearman_loss(score, target, tau=self.tau_spearman)
-        lc = contrastive_loss(z1, z2, target, margin=self.margin)
+        total = score.new_zeros(())
+        parts: dict = {}
 
-        total = self.w_pearson * lp + self.w_spearman * ls + self.w_contrastive * lc
-        return total, {
-            "pearson": lp.item(),
-            "spearman": ls.item(),
-            "contrastive": lc.item(),
-        }
+        if self.w_pearson > 0:
+            lp = pearson_loss(score, target)
+            total = total + self.w_pearson * lp
+            parts["pearson"] = lp.item()
+        if self.w_spearman > 0:
+            ls = soft_spearman_loss(score, target, tau=self.tau_spearman)
+            total = total + self.w_spearman * ls
+            parts["spearman"] = ls.item()
+        if self.w_contrastive > 0:
+            lc = contrastive_loss(z1, z2, target, margin=self.margin)
+            total = total + self.w_contrastive * lc
+            parts["contrastive"] = lc.item()
+        if self.w_cosent > 0:
+            lco = cosent_loss(z1, z2, target, tau=self.cosent_tau)
+            total = total + self.w_cosent * lco
+            parts["cosent"] = lco.item()
+
+        return total, parts

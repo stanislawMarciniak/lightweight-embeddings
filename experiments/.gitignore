@@ -1,0 +1,39 @@
+# Virtual environments
+/venv/
+.venv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# HuggingFace / dataset caches (downloaded on first run)
+data/hf_cache/
+.hf_cache/
+*hf_cache/
+
+# Downloaded embedding tables & precomputed tensors (large; fetch locally)
+data/glove*.txt
+data/precomputed_embeddings/
+data/*.pt
+data/*.zip
+
+# Training & benchmark outputs (regenerate with main.py)
+results/
+*.pt
+*.zip
+
+# Plots and tabular results from benchmarks / research scripts
+*.png
+*.csv
+results.json
+seed_sweep.json
+seed_sweep.log
+audit_embeddings.json
+
+# Ad-hoc outputs from optional analysis scripts (scripts/*.py stay in repo)
+scripts/*.png
+scripts/*.csv
+scripts/*.json
+
+# requirements.txt is tracked — do not ignore project metadata
+!requirements.txt

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Vite
+*.local
+.vite/

@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 
 
-EMBED_DIM = 100
+EMBED_DIM = 768
 
 
 class TextCNN(nn.Module):
@@ -17,7 +17,6 @@ class TextCNN(nn.Module):
 
     def __init__(
         self,
-        vocab_size: int,
         embed_dim: int = EMBED_DIM,
         filter_sizes: List[int] | None = None,
         num_channels: int = 256,
@@ -73,7 +72,6 @@ class TextCNNOptimized(nn.Module):
 
     def __init__(
         self,
-        vocab_size: int,
         embed_dim: int = EMBED_DIM,
         filter_sizes: List[int] | None = None,
         num_channels: int = 64,

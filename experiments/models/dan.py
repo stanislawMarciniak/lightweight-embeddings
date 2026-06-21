@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 
 
-EMBED_DIM = 100
+EMBED_DIM = 768
 
 
 class DeepAveragingNetwork(nn.Module):
@@ -14,7 +14,7 @@ class DeepAveragingNetwork(nn.Module):
     Standard DAN with 3 layers, hidden 768.
     """
 
-    def __init__(self, vocab_size: int, embed_dim: int = EMBED_DIM) -> None:
+    def __init__(self, embed_dim: int = EMBED_DIM) -> None:
         super().__init__()
         self.encoder = nn.Sequential(
             nn.Linear(embed_dim, 768),
@@ -59,7 +59,7 @@ class DeepAveragingNetworkOptimized(nn.Module):
     Optimized DAN with 2 layers, hidden 128 and INT8-ready.
     """
 
-    def __init__(self, vocab_size: int, embed_dim: int = EMBED_DIM) -> None:
+    def __init__(self, embed_dim: int = EMBED_DIM) -> None:
         super().__init__()
         self.fc1 = nn.Linear(embed_dim, 128)
         self.fc2 = nn.Linear(128, 128)

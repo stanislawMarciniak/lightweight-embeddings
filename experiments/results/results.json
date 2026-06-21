@@ -1,350 +1,530 @@
 [
   {
     "model": "dan_standard",
+    "requires_bundled_tokenizer": false,
     "fp32": {
       "metrics": {
-        "pearson": 0.44022777676582336,
-        "spearman": 0.4209980967709136,
-        "mse": 0.22275322675704956,
-        "cosine_error": 0.16845141351222992
+        "pearson": 0.5253745913505554,
+        "spearman": 0.512124519186217,
+        "mse": 0.21037335693836212,
+        "cosine_error": 0.25443747639656067
       },
-      "avg_batch_time": 0.46966080044512637,
-      "avg_sample_time": 14.676900013910199,
-      "throughput": 0.06813427897255132,
-      "model_size_mb": 9.307621002197266,
-      "n_params": 2439937
+      "avg_sample_time": 0.0871643562504687,
+      "e2e_sample_time": 0.1611236124993809,
+      "n_params": 2952961,
+      "learned_encoder_size_mb": 11.268193244934082,
+      "system_size_mb": 101.35341548919678,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 11.268193244934082,
+      "model_size_mb": 11.268193244934082,
+      "total_size_mb": 101.35341548919678,
+      "core_size_mb": 100.68811511993408,
+      "requires_bundled_tokenizer": false
     },
     "int8": {
       "metrics": {
-        "pearson": 0.4397207796573639,
-        "spearman": 0.4204488779188615,
-        "mse": 0.2232750952243805,
-        "cosine_error": 0.16795219480991364
+        "pearson": 0.5041849613189697,
+        "spearman": 0.4916466276050993,
+        "mse": 0.2114894688129425,
+        "cosine_error": 0.25396445393562317
       },
-      "avg_batch_time": 255.27038289947086,
-      "avg_sample_time": 7977.199465608464,
-      "throughput": 0.00012535727661207787,
-      "model_size_mb": 5.7220458984375e-05,
-      "n_params": 0
+      "avg_sample_time": 0.05340447265638204,
+      "e2e_sample_time": 0.10002895234251241,
+      "n_params": 2952961,
+      "learned_encoder_size_mb": 2.83194637298584,
+      "system_size_mb": 92.91716861724854,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 2.83194637298584,
+      "model_size_mb": 2.83194637298584,
+      "total_size_mb": 92.91716861724854,
+      "core_size_mb": 92.25186824798584,
+      "requires_bundled_tokenizer": false
     }
   },
   {
     "model": "dan_optimized",
+    "requires_bundled_tokenizer": false,
     "fp32": {
       "metrics": {
-        "pearson": 0.47204095125198364,
-        "spearman": 0.43407167155905646,
-        "mse": 0.28784415125846863,
-        "cosine_error": 0.13687017560005188
+        "pearson": 0.6972240209579468,
+        "spearman": 0.684426111632724,
+        "mse": 0.07687637209892273,
+        "cosine_error": 0.05716211721301079
       },
-      "avg_batch_time": 0.5312285997206345,
-      "avg_sample_time": 16.60089374126983,
-      "throughput": 0.06023772066644819,
-      "model_size_mb": 0.23828506469726562,
-      "n_params": 62465
+      "avg_sample_time": 0.014018084374356476,
+      "e2e_sample_time": 0.05751543281249383,
+      "n_params": 147969,
+      "learned_encoder_size_mb": 0.5675172805786133,
+      "system_size_mb": 90.65273952484131,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 0.5675172805786133,
+      "model_size_mb": 0.5675172805786133,
+      "total_size_mb": 90.65273952484131,
+      "core_size_mb": 89.98743915557861,
+      "requires_bundled_tokenizer": false
     },
     "int8": {
       "metrics": {
-        "pearson": 0.472767174243927,
-        "spearman": 0.43410642609462696,
-        "mse": 0.28782567381858826,
-        "cosine_error": 0.13701868057250977
+        "pearson": 0.6912358999252319,
+        "spearman": 0.6780406228327246,
+        "mse": 0.07872987538576126,
+        "cosine_error": 0.05631653219461441
       },
-      "avg_batch_time": 156.67933609947795,
-      "avg_sample_time": 4896.229253108686,
-      "throughput": 0.00020423880261837937,
-      "model_size_mb": 4.57763671875e-05,
-      "n_params": 0
+      "avg_sample_time": 0.013685614062808327,
+      "e2e_sample_time": 0.06086391015642789,
+      "n_params": 147969,
+      "learned_encoder_size_mb": 0.14793682098388672,
+      "system_size_mb": 90.23315906524658,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 0.14793682098388672,
+      "model_size_mb": 0.14793682098388672,
+      "total_size_mb": 90.23315906524658,
+      "core_size_mb": 89.56785869598389,
+      "requires_bundled_tokenizer": false
     }
   },
   {
     "model": "cnn_standard",
+    "requires_bundled_tokenizer": false,
     "fp32": {
       "metrics": {
-        "pearson": 0.28010886907577515,
-        "spearman": 0.2548968210989501,
-        "mse": 0.08624571561813354,
-        "cosine_error": 0.19064800441265106
+        "pearson": 0.24061502516269684,
+        "spearman": 0.22233456803098375,
+        "mse": 0.09881278872489929,
+        "cosine_error": 0.1795290857553482
       },
-      "avg_batch_time": 0.8359370993275661,
-      "avg_sample_time": 26.12303435398644,
-      "throughput": 0.03828039217991525,
-      "model_size_mb": 3.8857460021972656,
-      "n_params": 1018625
+      "avg_sample_time": 1.1031357484363014,
+      "e2e_sample_time": 1.1285180617186086,
+      "n_params": 2557697,
+      "learned_encoder_size_mb": 9.760319709777832,
+      "system_size_mb": 99.84554195404053,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 9.760319709777832,
+      "model_size_mb": 9.760319709777832,
+      "total_size_mb": 99.84554195404053,
+      "core_size_mb": 99.18024158477783,
+      "requires_bundled_tokenizer": false
     },
     "int8": {
       "metrics": {
-        "pearson": 0.2799913287162781,
-        "spearman": 0.25488278115625945,
-        "mse": 0.08625493943691254,
-        "cosine_error": 0.19064851105213165
+        "pearson": 0.24133208394050598,
+        "spearman": 0.22325574947460058,
+        "mse": 0.09873280674219131,
+        "cosine_error": 0.17952844500541687
       },
-      "avg_batch_time": 65.60210730021936,
-      "avg_sample_time": 2050.065853131855,
-      "throughput": 0.00048778920856240544,
-      "model_size_mb": 0.8818588256835938,
-      "n_params": 231168
+      "avg_sample_time": 1.0694794625003112,
+      "e2e_sample_time": 1.0925806570305951,
+      "n_params": 2557697,
+      "learned_encoder_size_mb": 7.510308265686035,
+      "system_size_mb": 97.59553050994873,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 7.510308265686035,
+      "model_size_mb": 7.510308265686035,
+      "total_size_mb": 97.59553050994873,
+      "core_size_mb": 96.93023014068604,
+      "requires_bundled_tokenizer": false
     }
   },
   {
     "model": "cnn_optimized",
+    "requires_bundled_tokenizer": false,
     "fp32": {
       "metrics": {
-        "pearson": 0.2831213176250458,
-        "spearman": 0.2569594043069122,
-        "mse": 0.08846019953489304,
-        "cosine_error": 0.18343381583690643
+        "pearson": 0.6253894567489624,
+        "spearman": 0.6075797365996086,
+        "mse": 0.11802367120981216,
+        "cosine_error": 0.06050090119242668
       },
-      "avg_batch_time": 0.7604989994433708,
-      "avg_sample_time": 23.76559373260534,
-      "throughput": 0.04207763589882648,
-      "model_size_mb": 0.24853897094726562,
-      "n_params": 65153
+      "avg_sample_time": 0.19766494843622695,
+      "e2e_sample_time": 0.237755446872967,
+      "n_params": 278913,
+      "learned_encoder_size_mb": 1.0670289993286133,
+      "system_size_mb": 91.15225124359131,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 1.0670289993286133,
+      "model_size_mb": 1.0670289993286133,
+      "total_size_mb": 91.15225124359131,
+      "core_size_mb": 90.48695087432861,
+      "requires_bundled_tokenizer": false
     },
     "int8": {
       "metrics": {
-        "pearson": 0.28325971961021423,
-        "spearman": 0.25718035047540694,
-        "mse": 0.08845896273851395,
-        "cosine_error": 0.18344151973724365
+        "pearson": 0.6254827976226807,
+        "spearman": 0.607941709525829,
+        "mse": 0.11795566231012344,
+        "cosine_error": 0.06050056591629982
       },
-      "avg_batch_time": 51.589240100292955,
-      "avg_sample_time": 1612.1637531341548,
-      "throughput": 0.0006202843836774848,
-      "model_size_mb": 0.12258148193359375,
-      "n_params": 32128
+      "avg_sample_time": 0.2036012007813781,
+      "e2e_sample_time": 0.2379448624999725,
+      "n_params": 278913,
+      "learned_encoder_size_mb": 0.9743032455444336,
+      "system_size_mb": 91.05952548980713,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 0.9743032455444336,
+      "model_size_mb": 0.9743032455444336,
+      "total_size_mb": 91.05952548980713,
+      "core_size_mb": 90.39422512054443,
+      "requires_bundled_tokenizer": false
     }
   },
   {
     "model": "bigru_standard",
+    "requires_bundled_tokenizer": false,
     "fp32": {
       "metrics": {
-        "pearson": 0.33066725730895996,
-        "spearman": 0.29547451813284265,
-        "mse": 0.09405816346406937,
-        "cosine_error": 0.14357918500900269
+        "pearson": 0.6463256478309631,
+        "spearman": 0.6274815664500878,
+        "mse": 0.09702087938785553,
+        "cosine_error": 0.04237143695354462
       },
-      "avg_batch_time": 3.600214300240623,
-      "avg_sample_time": 112.50669688251946,
-      "throughput": 0.008888359783988763,
-      "model_size_mb": 4.101566314697266,
-      "n_params": 1075201
+      "avg_sample_time": 0.989561159376251,
+      "e2e_sample_time": 1.0166376460944093,
+      "n_params": 2101249,
+      "learned_encoder_size_mb": 8.019591331481934,
+      "system_size_mb": 98.10481357574463,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 8.019591331481934,
+      "model_size_mb": 8.019591331481934,
+      "total_size_mb": 98.10481357574463,
+      "core_size_mb": 97.43951320648193,
+      "requires_bundled_tokenizer": false
     },
     "int8": {
       "metrics": {
-        "pearson": 0.33155155181884766,
-        "spearman": 0.29610810992875064,
-        "mse": 0.09373264014720917,
-        "cosine_error": 0.14374029636383057
+        "pearson": 0.6465291380882263,
+        "spearman": 0.6279309981072387,
+        "mse": 0.0974278450012207,
+        "cosine_error": 0.04249583184719086
       },
-      "avg_batch_time": 5733.696958600194,
-      "avg_sample_time": 179178.02995625607,
-      "throughput": 5.581041382384529e-06,
-      "model_size_mb": 2.288818359375e-05,
-      "n_params": 0
+      "avg_sample_time": 0.5487259789063614,
+      "e2e_sample_time": 0.5689967195309009,
+      "n_params": 2101249,
+      "learned_encoder_size_mb": 2.0201292037963867,
+      "system_size_mb": 92.10535144805908,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 2.0201292037963867,
+      "model_size_mb": 2.0201292037963867,
+      "total_size_mb": 92.10535144805908,
+      "core_size_mb": 91.44005107879639,
+      "requires_bundled_tokenizer": false
     }
   },
   {
     "model": "bigru_optimized",
+    "requires_bundled_tokenizer": false,
     "fp32": {
       "metrics": {
-        "pearson": 0.30208876729011536,
-        "spearman": 0.2817705157604914,
-        "mse": 0.08841459453105927,
-        "cosine_error": 0.16693930327892303
+        "pearson": 0.6483590602874756,
+        "spearman": 0.6345162620043131,
+        "mse": 0.10244913399219513,
+        "cosine_error": 0.046248793601989746
       },
-      "avg_batch_time": 1.4292311992903706,
-      "avg_sample_time": 44.66347497782408,
-      "throughput": 0.0223896595707457,
-      "model_size_mb": 1.1757850646972656,
-      "n_params": 308225
+      "avg_sample_time": 0.4181590132816382,
+      "e2e_sample_time": 0.4532461898435258,
+      "n_params": 821249,
+      "learned_encoder_size_mb": 3.1367788314819336,
+      "system_size_mb": 93.22200107574463,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 3.1367788314819336,
+      "model_size_mb": 3.1367788314819336,
+      "total_size_mb": 93.22200107574463,
+      "core_size_mb": 92.55670070648193,
+      "requires_bundled_tokenizer": false
     },
     "int8": {
       "metrics": {
-        "pearson": 0.30255579948425293,
-        "spearman": 0.28191922342099035,
-        "mse": 0.08843686431646347,
-        "cosine_error": 0.1669624149799347
+        "pearson": 0.6459190249443054,
+        "spearman": 0.6316495402901141,
+        "mse": 0.10485140234231949,
+        "cosine_error": 0.046287767589092255
       },
-      "avg_batch_time": 5753.564586399443,
-      "avg_sample_time": 179798.8933249826,
-      "throughput": 5.561769494278931e-06,
-      "model_size_mb": 2.288818359375e-05,
-      "n_params": 0
+      "avg_sample_time": 0.2831249703135086,
+      "e2e_sample_time": 0.3323835796877006,
+      "n_params": 821249,
+      "learned_encoder_size_mb": 0.7942991256713867,
+      "system_size_mb": 90.87952136993408,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 0.7942991256713867,
+      "model_size_mb": 0.7942991256713867,
+      "total_size_mb": 90.87952136993408,
+      "core_size_mb": 90.21422100067139,
+      "requires_bundled_tokenizer": false
     }
   },
   {
     "model": "sru_standard",
+    "requires_bundled_tokenizer": false,
     "fp32": {
       "metrics": {
-        "pearson": 0.3734757900238037,
-        "spearman": 0.3392926527400843,
-        "mse": 0.09097546339035034,
-        "cosine_error": 0.1429724246263504
+        "pearson": 0.663135826587677,
+        "spearman": 0.6447721593500487,
+        "mse": 0.19626863300800323,
+        "cosine_error": 0.07550543546676636
       },
-      "avg_batch_time": 18.22970549983438,
-      "avg_sample_time": 569.6782968698244,
-      "throughput": 0.00175537668451587,
-      "model_size_mb": 1.5478553771972656,
-      "n_params": 405761
+      "avg_sample_time": 0.5099764296879528,
+      "e2e_sample_time": 0.5457959640608578,
+      "n_params": 918785,
+      "learned_encoder_size_mb": 3.5075883865356445,
+      "system_size_mb": 93.59281063079834,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 3.5075883865356445,
+      "model_size_mb": 3.5075883865356445,
+      "total_size_mb": 93.59281063079834,
+      "core_size_mb": 92.92751026153564,
+      "requires_bundled_tokenizer": false
     },
     "int8": {
       "metrics": {
-        "pearson": 0.3729824721813202,
-        "spearman": 0.33775631394510414,
-        "mse": 0.090947225689888,
-        "cosine_error": 0.1428738385438919
+        "pearson": 0.6612029671669006,
+        "spearman": 0.6451716306015972,
+        "mse": 0.19805306196212769,
+        "cosine_error": 0.07522940635681152
       },
-      "avg_batch_time": 2880.7050707997405,
-      "avg_sample_time": 90022.03346249189,
-      "throughput": 1.1108391596337965e-05,
-      "model_size_mb": 3.4332275390625e-05,
-      "n_params": 0
+      "avg_sample_time": 0.2860456484384599,
+      "e2e_sample_time": 0.30793564921722805,
+      "n_params": 918785,
+      "learned_encoder_size_mb": 0.8837881088256836,
+      "system_size_mb": 90.96901035308838,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 0.8837881088256836,
+      "model_size_mb": 0.8837881088256836,
+      "total_size_mb": 90.96901035308838,
+      "core_size_mb": 90.30370998382568,
+      "requires_bundled_tokenizer": false
     }
   },
   {
     "model": "sru_optimized",
+    "requires_bundled_tokenizer": false,
     "fp32": {
       "metrics": {
-        "pearson": 0.3871784806251526,
-        "spearman": 0.35210065287605463,
-        "mse": 0.08550801873207092,
-        "cosine_error": 0.1521698236465454
+        "pearson": 0.6671784520149231,
+        "spearman": 0.6536288098074596,
+        "mse": 0.10185494273900986,
+        "cosine_error": 0.062321681529283524
       },
-      "avg_batch_time": 18.38458890124457,
-      "avg_sample_time": 574.5184031638928,
-      "throughput": 0.0017405882814074628,
-      "model_size_mb": 0.4614295959472656,
-      "n_params": 120961
+      "avg_sample_time": 0.2183983773448972,
+      "e2e_sample_time": 0.25738489062518966,
+      "n_params": 377473,
+      "learned_encoder_size_mb": 1.4426469802856445,
+      "system_size_mb": 91.52786922454834,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 1.4426469802856445,
+      "model_size_mb": 1.4426469802856445,
+      "total_size_mb": 91.52786922454834,
+      "core_size_mb": 90.86256885528564,
+      "requires_bundled_tokenizer": false
     },
     "int8": {
       "metrics": {
-        "pearson": 0.38737916946411133,
-        "spearman": 0.35200250121572746,
-        "mse": 0.08552086353302002,
-        "cosine_error": 0.15237417817115784
+        "pearson": 0.6632166504859924,
+        "spearman": 0.6486130564738304,
+        "mse": 0.10282823443412781,
+        "cosine_error": 0.06264866888523102
       },
-      "avg_batch_time": 2978.3404978988983,
-      "avg_sample_time": 93073.14055934057,
-      "throughput": 1.074423828389492e-05,
-      "model_size_mb": 3.4332275390625e-05,
-      "n_params": 0
+      "avg_sample_time": 0.13315129921807056,
+      "e2e_sample_time": 0.17318217890647247,
+      "n_params": 377473,
+      "learned_encoder_size_mb": 0.3660879135131836,
+      "system_size_mb": 90.45131015777588,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 0.3660879135131836,
+      "model_size_mb": 0.3660879135131836,
+      "total_size_mb": 90.45131015777588,
+      "core_size_mb": 89.78600978851318,
+      "requires_bundled_tokenizer": false
     }
   },
   {
     "model": "custom_hybrid",
+    "requires_bundled_tokenizer": false,
     "fp32": {
       "metrics": {
-        "pearson": 0.5965369939804077,
-        "spearman": 0.5662098388607159,
-        "mse": 0.06082689389586449,
-        "cosine_error": 0.1379065364599228
+        "pearson": 0.7774606943130493,
+        "spearman": 0.7682659834360305,
+        "mse": 0.04922580346465111,
+        "cosine_error": 0.049628980457782745
       },
-      "avg_batch_time": 1.0300919999281177,
-      "avg_sample_time": 32.19037499775368,
-      "throughput": 0.031065186412702006,
-      "model_size_mb": 0.30603790283203125,
-      "n_params": 80226
+      "avg_sample_time": 0.03267413828069721,
+      "e2e_sample_time": 0.0783498890640999,
+      "n_params": 345637,
+      "learned_encoder_size_mb": 1.3237791061401367,
+      "system_size_mb": 91.40900135040283,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 1.3237791061401367,
+      "model_size_mb": 1.3237791061401367,
+      "total_size_mb": 91.40900135040283,
+      "core_size_mb": 90.74370098114014,
+      "requires_bundled_tokenizer": false
     },
     "int8": {
       "metrics": {
-        "pearson": 0.5964729189872742,
-        "spearman": 0.5661779396908216,
-        "mse": 0.060835763812065125,
-        "cosine_error": 0.13794472813606262
+        "pearson": 0.7749723792076111,
+        "spearman": 0.765432410784917,
+        "mse": 0.050147440284490585,
+        "cosine_error": 0.04968371242284775
       },
-      "avg_batch_time": 170.79745560040465,
-      "avg_sample_time": 5337.420487512645,
-      "throughput": 0.0001873564210164041,
-      "model_size_mb": 0.1477508544921875,
-      "n_params": 38720
+      "avg_sample_time": 0.03930463984289645,
+      "e2e_sample_time": 0.0893976242196004,
+      "n_params": 345637,
+      "learned_encoder_size_mb": 0.3407125473022461,
+      "system_size_mb": 90.42593479156494,
+      "tokenizer_size_mb": 0.6653003692626953,
+      "embedding_table_size_mb": 89.419921875,
+      "learned_size_mb": 0.3407125473022461,
+      "model_size_mb": 0.3407125473022461,
+      "total_size_mb": 90.42593479156494,
+      "core_size_mb": 89.76063442230225,
+      "requires_bundled_tokenizer": false
     }
   },
   {
     "model": "glove_mean",
+    "requires_bundled_tokenizer": false,
     "fp32": {
       "metrics": {
-        "pearson": 0.2653760313987732,
-        "spearman": 0.29356808389980543,
-        "mse": 0.28808557987213135,
-        "cosine_error": 0.25860875844955444
+        "pearson": 0.26414546370506287,
+        "spearman": 0.2873186022453154,
+        "mse": 0.29170259833335876,
+        "cosine_error": 0.26490747928619385
       },
-      "avg_batch_time": 0.608149900654098,
-      "avg_sample_time": 19.004684395440563,
-      "throughput": 0.052618605981160686,
-      "model_size_mb": 152.587890625,
-      "n_params": 40000000
+      "avg_sample_time": 0.00483474218668789,
+      "e2e_sample_time": 0.004631010936861912,
+      "n_params": 0,
+      "learned_encoder_size_mb": 0.0,
+      "system_size_mb": 19.073867797851562,
+      "tokenizer_size_mb": 0.0,
+      "embedding_table_size_mb": 19.073867797851562,
+      "learned_size_mb": 0.0,
+      "model_size_mb": 0.0,
+      "total_size_mb": 19.073867797851562,
+      "core_size_mb": 19.073867797851562,
+      "requires_bundled_tokenizer": false
     },
     "int8": {
       "metrics": {
-        "pearson": 0.2653760313987732,
-        "spearman": 0.29356808389980543,
-        "mse": 0.28808557987213135,
-        "cosine_error": 0.25860875844955444
+        "pearson": 0.26414546370506287,
+        "spearman": 0.2873186022453154,
+        "mse": 0.29170259833335876,
+        "cosine_error": 0.26490747928619385
       },
-      "avg_batch_time": 0.608149900654098,
-      "avg_sample_time": 19.004684395440563,
-      "throughput": 0.052618605981160686,
-      "model_size_mb": 152.587890625,
-      "n_params": 40000000
+      "avg_sample_time": 0.00483474218668789,
+      "e2e_sample_time": 0.004631010936861912,
+      "n_params": 0,
+      "learned_encoder_size_mb": 0.0,
+      "system_size_mb": 19.073867797851562,
+      "tokenizer_size_mb": 0.0,
+      "embedding_table_size_mb": 19.073867797851562,
+      "learned_size_mb": 0.0,
+      "model_size_mb": 0.0,
+      "total_size_mb": 19.073867797851562,
+      "core_size_mb": 19.073867797851562,
+      "requires_bundled_tokenizer": false
     }
   },
   {
-    "model": "sentence_transformer",
+    "model": "model2vec_static",
+    "requires_bundled_tokenizer": true,
     "fp32": {
       "metrics": {
-        "pearson": 0.8274062871932983,
-        "spearman": 0.8203246731235654,
-        "mse": 0.12428534775972366,
-        "cosine_error": 0.03681892529129982
+        "pearson": 0.7725982069969177,
+        "spearman": 0.7540516069202422,
+        "mse": 0.13856716454029083,
+        "cosine_error": 0.04988285154104233
       },
-      "avg_batch_time": 14.139271199383074,
-      "avg_sample_time": 441.8522249807211,
-      "throughput": 0.0022632001005395684,
-      "model_size_mb": 86.64404296875,
-      "n_params": 22713216
+      "avg_sample_time": 0.03038600078113518,
+      "e2e_sample_time": 0.02754823124959671,
+      "n_params": 0,
+      "learned_encoder_size_mb": 0.0,
+      "system_size_mb": 29.69893741607666,
+      "tokenizer_size_mb": 0.8629999160766602,
+      "embedding_table_size_mb": 28.8359375,
+      "learned_size_mb": 0.0,
+      "model_size_mb": 0.0,
+      "total_size_mb": 29.69893741607666,
+      "core_size_mb": 28.8359375,
+      "requires_bundled_tokenizer": true
     },
     "int8": {
       "metrics": {
-        "pearson": 0.8274062871932983,
-        "spearman": 0.8203246731235654,
-        "mse": 0.12428534775972366,
-        "cosine_error": 0.03681892529129982
+        "pearson": 0.7725982069969177,
+        "spearman": 0.7540516069202422,
+        "mse": 0.13856716454029083,
+        "cosine_error": 0.04988285154104233
       },
-      "avg_batch_time": 14.139271199383074,
-      "avg_sample_time": 441.8522249807211,
-      "throughput": 0.0022632001005395684,
-      "model_size_mb": 86.64404296875,
-      "n_params": 22713216
+      "avg_sample_time": 0.03038600078113518,
+      "e2e_sample_time": 0.02754823124959671,
+      "n_params": 0,
+      "learned_encoder_size_mb": 0.0,
+      "system_size_mb": 29.69893741607666,
+      "tokenizer_size_mb": 0.8629999160766602,
+      "embedding_table_size_mb": 28.8359375,
+      "learned_size_mb": 0.0,
+      "model_size_mb": 0.0,
+      "total_size_mb": 29.69893741607666,
+      "core_size_mb": 28.8359375,
+      "requires_bundled_tokenizer": true
     }
   },
   {
-    "model": "bge_small",
+    "model": "minilm",
+    "requires_bundled_tokenizer": true,
     "fp32": {
       "metrics": {
-        "pearson": 0.8548429608345032,
-        "spearman": 0.867038624256897,
-        "mse": 0.13637274503707886,
-        "cosine_error": 0.04104688763618469
+        "pearson": 0.8274064064025879,
+        "spearman": 0.8203246731235654,
+        "mse": 0.12428534775972366,
+        "cosine_error": 0.03681892156600952
       },
-      "avg_batch_time": 28.315895000559976,
-      "avg_sample_time": 884.8717187674993,
-      "throughput": 0.001130107312495938,
-      "model_size_mb": 127.25830078125,
-      "n_params": 33360000
+      "avg_sample_time": 6.892309219529125,
+      "e2e_sample_time": 6.781331869532181,
+      "n_params": 22713216,
+      "learned_encoder_size_mb": 86.68394565582275,
+      "system_size_mb": 87.34981727600098,
+      "tokenizer_size_mb": 0.6658716201782227,
+      "embedding_table_size_mb": 0.0,
+      "learned_size_mb": 86.68394565582275,
+      "model_size_mb": 86.68394565582275,
+      "total_size_mb": 87.34981727600098,
+      "core_size_mb": 86.68394565582275,
+      "requires_bundled_tokenizer": true
     },
     "int8": {
       "metrics": {
-        "pearson": 0.8548429608345032,
-        "spearman": 0.867038624256897,
-        "mse": 0.13637274503707886,
-        "cosine_error": 0.04104688763618469
+        "pearson": 0.8274064064025879,
+        "spearman": 0.8203246731235654,
+        "mse": 0.12428534775972366,
+        "cosine_error": 0.03681892156600952
       },
-      "avg_batch_time": 28.315895000559976,
-      "avg_sample_time": 884.8717187674993,
-      "throughput": 0.001130107312495938,
-      "model_size_mb": 127.25830078125,
-      "n_params": 33360000
+      "avg_sample_time": 6.892309219529125,
+      "e2e_sample_time": 6.781331869532181,
+      "n_params": 22713216,
+      "learned_encoder_size_mb": 86.68394565582275,
+      "system_size_mb": 87.34981727600098,
+      "tokenizer_size_mb": 0.6658716201782227,
+      "embedding_table_size_mb": 0.0,
+      "learned_size_mb": 86.68394565582275,
+      "model_size_mb": 86.68394565582275,
+      "total_size_mb": 87.34981727600098,
+      "core_size_mb": 86.68394565582275,
+      "requires_bundled_tokenizer": true
     }
   }
 ]

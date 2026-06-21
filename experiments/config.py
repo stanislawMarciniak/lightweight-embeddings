@@ -21,10 +21,14 @@ class TrainingConfig:
     early_stopping_min_improvement: float = 1e-4
     early_stopping_ma_window: int = 5
     fp16: bool = False
-    # HybridLoss weights (must sum to 1; normalized in HybridLoss if not).
+    # HybridLoss weights (normalized in HybridLoss if they do not sum to 1).
     w_pearson: float = 0.2
     w_spearman: float = 0.2
-    w_contrastive: float = 0.6
+    w_contrastive: float = 0.3
+    # CoSENT ranking loss on cosine(z1, z2): training-only, strong STS signal,
+    # zero inference cost. tau is the inverse temperature scale (1/20 by default).
+    w_cosent: float = 0.3
+    cosent_tau: float = 0.05
 
 
 @dataclass(slots=True)
@@ -38,6 +42,8 @@ class ExperimentConfig:
     training: TrainingConfig = field(default_factory=TrainingConfig)
     quantization: QuantizationConfig = field(default_factory=QuantizationConfig)
     results_dir: str = "results"
+    # Accuracy eval and latency both use this batch size on single-core CPU.
+    eval_batch_size: int = 128
 
 
 DEFAULT_CONFIG = ExperimentConfig()

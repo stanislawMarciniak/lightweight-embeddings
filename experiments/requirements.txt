@@ -1,0 +1,12 @@
+torch
+torchvision
+torchaudio
+transformers
+datasets
+sentence-transformers
+model2vec
+numpy
+scipy
+scikit-learn
+matplotlib
+pandas

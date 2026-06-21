@@ -1,0 +1,30 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.env.*
+
+# HuggingFace tokenizer/model cache
+.hf_cache/
+*hf_cache/
+app/models/hf_cache/
+
+# Encoder weights & large lookup tables (export or download separately)
+app/models/*.pt
+app/models/*.npz
+app/models/*.onnx
+app/models/glove*.txt
+
+# Generated bulk FAQ imports (build with scripts/build_faq_dataset.py)
+faq_500.json
+faq_*.json
+
+# Keep small sample data and dependency list
+!sample_faq_pairs.jsonl
+!requirements.txt

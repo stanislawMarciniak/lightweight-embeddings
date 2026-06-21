@@ -32,7 +32,7 @@ class SimpleSRUCell(nn.Module):
         return h_t
 
 
-EMBED_DIM = 100
+EMBED_DIM = 768
 
 
 class SRUEncoder(nn.Module):
@@ -43,7 +43,6 @@ class SRUEncoder(nn.Module):
 
     def __init__(
         self,
-        vocab_size: int,
         embed_dim: int = EMBED_DIM,
         hidden_size: int = 256,
     ) -> None:
@@ -91,9 +90,8 @@ class SRUEncoderOptimized(SRUEncoder):
 
     def __init__(
         self,
-        vocab_size: int,
         embed_dim: int = EMBED_DIM,
         hidden_size: int = 128,
     ) -> None:
-        super().__init__(vocab_size=vocab_size, embed_dim=embed_dim, hidden_size=hidden_size)
+        super().__init__(embed_dim=embed_dim, hidden_size=hidden_size)
 
